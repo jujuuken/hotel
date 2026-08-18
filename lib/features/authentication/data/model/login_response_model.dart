@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../domain/entity/login_response_entity.dart';
+
+import '../../domain/entity/auth_user.dart';
 
 part 'login_response_model.freezed.dart';
-
 part 'login_response_model.g.dart';
 
 @freezed
@@ -16,8 +16,8 @@ sealed class LoginResponseModel with _$LoginResponseModel {
 
   factory LoginResponseModel.fromJson(Map<String, dynamic> json) => _$LoginResponseModelFromJson(json);
 
-  LoginResponseEntity toEntity() {
-    return LoginResponseEntity(
+  AuthUser toEntity() {
+    return AuthUser(
       accessToken: accessToken,
       refreshToken: refreshToken,
     );

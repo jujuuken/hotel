@@ -17,6 +17,7 @@ dependencies:
   fpdart: ^1.2.0
   get_it: ^9.2.0
   freezed_annotation: ^3.1.0
+
   # Navigation & Network
   go_router: ^17.0.1
   dio: ^5.9.0
@@ -25,6 +26,9 @@ dependencies:
   intl: ^0.20.2
   shared_preferences: ^2.5.4
   flutter_secure_storage: ^10.0.0
+
+  #Other
+  lucide_icons_flutter: ^3.1.13
 
   # Debugging (Core UI untuk Talker)
   talker_flutter: ^5.1.11

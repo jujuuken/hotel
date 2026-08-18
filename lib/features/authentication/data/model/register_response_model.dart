@@ -1,9 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../domain/entity/register_response_entity.dart';
+import '../../domain/entity/auth_user.dart';
 
 part 'register_response_model.freezed.dart';
-
 part 'register_response_model.g.dart';
 
 @freezed
@@ -17,10 +16,10 @@ sealed class RegisterResponseModel with _$RegisterResponseModel {
 
   factory RegisterResponseModel.fromJson(Map<String, dynamic> json) => _$RegisterResponseModelFromJson(json);
 
-  RegisterResponseEntity toEntity() {
-    return RegisterResponseEntity(
-      id: id,
-      username: username,
+  AuthUser toEntity() {
+    return AuthUser(
+      accessToken: id,
+      refreshToken: username,
     );
   }
 

@@ -1,3 +1,4 @@
+import '../../../features/authentication/data/data_source/local/auth_local_data_source.dart';
 import '../../../features/authentication/data/data_source/remote/auth_remote_data_source.dart';
 import '../../../features/authentication/data/repository/auth_repository_impl.dart';
 import '../../../features/authentication/domain/repository/auth_repository.dart';
@@ -10,6 +11,15 @@ import '../injection_container.dart';
 
 class AuthModule {
   static void init() {
+    sl.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl(api: sl<ApiConsumer>()));
+    sl.registerLazySingleton<AuthLocalDataSource>(() => AuthLocalDataSourceImpl());
+
+    sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(rds: sl<AuthRemoteDataSource>(), lds: sl<AuthLocalDataSource>()));
+
+    sl.registerLazySingleton(() => LoginUseCase(sl<AuthRepository>()));
+    sl.registerLazySingleton(() => RegisterUseCase(sl<AuthRepository>()));
+    sl.registerLazySingleton(() => LogoutUseCase(sl<AuthRepository>()));
+
     sl.registerFactory(
       () => AuthenticationBloc(
         login: sl<LoginUseCase>(),
@@ -17,13 +27,5 @@ class AuthModule {
         logout: sl<LogoutUseCase>(),
       ),
     );
-
-    sl.registerLazySingleton(() => LoginUseCase(sl<AuthRepository>()));
-    sl.registerLazySingleton(() => RegisterUseCase(sl<AuthRepository>()));
-    sl.registerLazySingleton(() => LogoutUseCase(sl<AuthRepository>()));
-
-    sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(rds: sl<AuthRemoteDataSource>()));
-
-    sl.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl(api: sl<ApiConsumer>()));
   }
 }

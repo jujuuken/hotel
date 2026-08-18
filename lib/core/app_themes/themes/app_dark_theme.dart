@@ -8,18 +8,22 @@ sealed class AppDarkThemes {
   static ThemeData call() {
     return ThemeData(
       useMaterial3: true,
-      scaffoldBackgroundColor: AppColors.scaffoldBackground,
+      scaffoldBackgroundColor: AppColors.scaffoldBackgroundDark,
       fontFamily: AppStrings.enFont,
       fontFamilyFallback: [AppStrings.arFont],
-      pageTransitionsTheme: const PageTransitionsTheme(builders: {TargetPlatform.android: CupertinoPageTransitionsBuilder()}),
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {TargetPlatform.android: PredictiveBackPageTransitionsBuilder()},
+      ),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.appbarBackground,
+        backgroundColor: AppColors.appbarBackgroundDark,
         titleTextStyle: AppTextStyle.style24SemiBold,
         centerTitle: true,
         scrolledUnderElevation: 0,
         elevation: 0,
         titleSpacing: 16,
-        shape: const Border(bottom: BorderSide(color: AppColors.appbarDivider, width: 1.5)),
+        shape: const Border(
+          bottom: BorderSide(color: AppColors.zn800, width: 1.5),
+        ),
         actionsIconTheme: const IconThemeData(color: Colors.white),
         surfaceTintColor: Colors.transparent,
         // shadowColor: Colors.grey,
@@ -42,12 +46,24 @@ sealed class AppDarkThemes {
       ),
       switchTheme: SwitchThemeData(
         thumbIcon: WidgetStateProperty.resolveWith(
-          (states) =>
-              states.contains(WidgetState.selected) ? const Icon(Icons.check, color: AppColors.primary, size: 20) : const Icon(Icons.close, size: 20),
+              (states) => states.contains(WidgetState.selected)
+              ? const Icon(Icons.check, color: AppColors.primary, size: 20)
+              : const Icon(Icons.close, size: 20),
         ),
-        trackColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? AppColors.primary : AppColors.white),
-        thumbColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? AppColors.white : AppColors.primary),
-        trackOutlineColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? null : AppColors.primary),
+        trackColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected)
+              ? AppColors.primary
+              : AppColors.white,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected)
+              ? AppColors.white
+              : AppColors.primary,
+        ),
+        trackOutlineColor: WidgetStateProperty.resolveWith(
+              (states) =>
+          states.contains(WidgetState.selected) ? null : AppColors.primary,
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -61,7 +77,9 @@ sealed class AppDarkThemes {
       ),
       badgeTheme: const BadgeThemeData(backgroundColor: AppColors.red),
       checkboxTheme: CheckboxThemeData(
-        checkColor: WidgetStateProperty.all(AppColors.primary), // Checkmark color
+        checkColor: WidgetStateProperty.all(
+          AppColors.primary,
+        ), // Checkmark color
         fillColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
             return AppColors.white;
@@ -71,14 +89,16 @@ sealed class AppDarkThemes {
       ),
       navigationBarTheme: NavigationBarThemeData(
         height: 74,
-        labelTextStyle: WidgetStatePropertyAll<TextStyle>(AppTextStyle.style14Light),
-        overlayColor: const WidgetStatePropertyAll<Color>(AppColors.zn700),
-        backgroundColor: AppColors.secondary,
+        labelTextStyle: WidgetStatePropertyAll<TextStyle>(
+          AppTextStyle.style14Light,
+        ),
+        overlayColor: const WidgetStatePropertyAll<Color>(AppColors.zn800),
+        backgroundColor: AppColors.appbarBackgroundDark,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: AppColors.secondary,
-        selectedItemColor: AppColors.white,
-        unselectedItemColor: AppColors.zn300,
+        backgroundColor: AppColors.appbarBackgroundDark,
+        selectedItemColor: AppColors.primary,
+        unselectedItemColor: AppColors.zn400,
         selectedLabelStyle: AppTextStyle.style14Light,
         unselectedLabelStyle: AppTextStyle.style14Light,
         showSelectedLabels: true,

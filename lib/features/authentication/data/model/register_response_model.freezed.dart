@@ -14,47 +14,49 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$RegisterResponseModel {
+  String get id;
+  String get username;
 
- String get id; String get username;
-/// Create a copy of RegisterResponseModel
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$RegisterResponseModelCopyWith<RegisterResponseModel> get copyWith => _$RegisterResponseModelCopyWithImpl<RegisterResponseModel>(this as RegisterResponseModel, _$identity);
+  /// Create a copy of RegisterResponseModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RegisterResponseModelCopyWith<RegisterResponseModel> get copyWith =>
+      _$RegisterResponseModelCopyWithImpl<RegisterResponseModel>(
+          this as RegisterResponseModel, _$identity);
 
   /// Serializes this RegisterResponseModel to a JSON map.
   Map<String, dynamic> toJson();
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RegisterResponseModel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username));
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterResponseModel&&(identical(other.id, id) || other.id == id)&&(identical(other.username, username) || other.username == username));
-}
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, username);
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,username);
-
-@override
-String toString() {
-  return 'RegisterResponseModel(id: $id, username: $username)';
-}
-
-
+  @override
+  String toString() {
+    return 'RegisterResponseModel(id: $id, username: $username)';
+  }
 }
 
 /// @nodoc
-abstract mixin class $RegisterResponseModelCopyWith<$Res>  {
-  factory $RegisterResponseModelCopyWith(RegisterResponseModel value, $Res Function(RegisterResponseModel) _then) = _$RegisterResponseModelCopyWithImpl;
-@useResult
-$Res call({
- String id, String username
-});
-
-
-
-
+abstract mixin class $RegisterResponseModelCopyWith<$Res> {
+  factory $RegisterResponseModelCopyWith(RegisterResponseModel value,
+          $Res Function(RegisterResponseModel) _then) =
+      _$RegisterResponseModelCopyWithImpl;
+  @useResult
+  $Res call({String id, String username});
 }
+
 /// @nodoc
 class _$RegisterResponseModelCopyWithImpl<$Res>
     implements $RegisterResponseModelCopyWith<$Res> {
@@ -63,193 +65,240 @@ class _$RegisterResponseModelCopyWithImpl<$Res>
   final RegisterResponseModel _self;
   final $Res Function(RegisterResponseModel) _then;
 
-/// Create a copy of RegisterResponseModel
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? username = null,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  /// Create a copy of RegisterResponseModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? username = null,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
-
-}
-
 
 /// Adds pattern-matching-related methods to [RegisterResponseModel].
 extension RegisterResponseModelPatterns on RegisterResponseModel {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _RegisterResponseModel value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _RegisterResponseModel() when $default != null:
-return $default(_that);case _:
-  return orElse();
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_RegisterResponseModel value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RegisterResponseModel() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
 
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _RegisterResponseModel value)  $default,){
-final _that = this;
-switch (_that) {
-case _RegisterResponseModel():
-return $default(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_RegisterResponseModel value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RegisterResponseModel():
+        return $default(_that);
+    }
+  }
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _RegisterResponseModel value)?  $default,){
-final _that = this;
-switch (_that) {
-case _RegisterResponseModel() when $default != null:
-return $default(_that);case _:
-  return null;
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_RegisterResponseModel value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RegisterResponseModel() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String username)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _RegisterResponseModel() when $default != null:
-return $default(_that.id,_that.username);case _:
-  return orElse();
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, String username)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RegisterResponseModel() when $default != null:
+        return $default(_that.id, _that.username);
+      case _:
+        return orElse();
+    }
+  }
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String username)  $default,) {final _that = this;
-switch (_that) {
-case _RegisterResponseModel():
-return $default(_that.id,_that.username);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String username)?  $default,) {final _that = this;
-switch (_that) {
-case _RegisterResponseModel() when $default != null:
-return $default(_that.id,_that.username);case _:
-  return null;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, String username) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RegisterResponseModel():
+        return $default(_that.id, _that.username);
+    }
+  }
 
-}
-}
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String id, String username)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RegisterResponseModel() when $default != null:
+        return $default(_that.id, _that.username);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-
 class _RegisterResponseModel extends RegisterResponseModel {
-  const _RegisterResponseModel({required this.id, required this.username}): super._();
-  factory _RegisterResponseModel.fromJson(Map<String, dynamic> json) => _$RegisterResponseModelFromJson(json);
+  const _RegisterResponseModel({required this.id, required this.username})
+      : super._();
+  factory _RegisterResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$RegisterResponseModelFromJson(json);
 
-@override final  String id;
-@override final  String username;
+  @override
+  final String id;
+  @override
+  final String username;
 
-/// Create a copy of RegisterResponseModel
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$RegisterResponseModelCopyWith<_RegisterResponseModel> get copyWith => __$RegisterResponseModelCopyWithImpl<_RegisterResponseModel>(this, _$identity);
+  /// Create a copy of RegisterResponseModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RegisterResponseModelCopyWith<_RegisterResponseModel> get copyWith =>
+      __$RegisterResponseModelCopyWithImpl<_RegisterResponseModel>(
+          this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$RegisterResponseModelToJson(this, );
-}
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RegisterResponseModelToJson(
+      this,
+    );
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterResponseModel&&(identical(other.id, id) || other.id == id)&&(identical(other.username, username) || other.username == username));
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RegisterResponseModel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username));
+  }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,username);
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, username);
 
-@override
-String toString() {
-  return 'RegisterResponseModel(id: $id, username: $username)';
-}
-
-
+  @override
+  String toString() {
+    return 'RegisterResponseModel(id: $id, username: $username)';
+  }
 }
 
 /// @nodoc
-abstract mixin class _$RegisterResponseModelCopyWith<$Res> implements $RegisterResponseModelCopyWith<$Res> {
-  factory _$RegisterResponseModelCopyWith(_RegisterResponseModel value, $Res Function(_RegisterResponseModel) _then) = __$RegisterResponseModelCopyWithImpl;
-@override @useResult
-$Res call({
- String id, String username
-});
-
-
-
-
+abstract mixin class _$RegisterResponseModelCopyWith<$Res>
+    implements $RegisterResponseModelCopyWith<$Res> {
+  factory _$RegisterResponseModelCopyWith(_RegisterResponseModel value,
+          $Res Function(_RegisterResponseModel) _then) =
+      __$RegisterResponseModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, String username});
 }
+
 /// @nodoc
 class __$RegisterResponseModelCopyWithImpl<$Res>
     implements _$RegisterResponseModelCopyWith<$Res> {
@@ -258,17 +307,25 @@ class __$RegisterResponseModelCopyWithImpl<$Res>
   final _RegisterResponseModel _self;
   final $Res Function(_RegisterResponseModel) _then;
 
-/// Create a copy of RegisterResponseModel
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? username = null,}) {
-  return _then(_RegisterResponseModel(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,username: null == username ? _self.username : username // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
+  /// Create a copy of RegisterResponseModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? username = null,
+  }) {
+    return _then(_RegisterResponseModel(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 // dart format on

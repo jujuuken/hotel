@@ -44,29 +44,41 @@ extension SnackBarExtension on BuildContext {
   }
 
   //Shortcut untuk memanggil SnackBar Error dengan cepat
-  void showErrorSnackBar(String message) {
+  void showErrorSnackBar(
+      String message, {
+        Duration duration = const Duration(seconds: 3),
+      }) {
     showSnackBar(
+      duration: duration,
       message: message,
       backgroundColor: Colors.red[400],
-      icon: Icons.error_outline,
+      icon: LucideIcons.circleAlert,
     );
   }
 
   //Shortcut untuk memanggil SnackBar Sukses
-  void showSuccessSnackBar(String message) {
+  void showSuccessSnackBar(
+      String message, {
+        Duration duration = const Duration(seconds: 3),
+      }) {
     showSnackBar(
+      duration: duration,
       message: message,
       backgroundColor: Colors.green[400],
-      icon: Icons.check_circle_outline,
+      icon: LucideIcons.circleCheck,
     );
   }
 
   //Shortcut untuk memanggil SnackBar Netral
-  void showNeutralSnackBar(String message) {
+  void showNeutralSnackBar(
+      String message, {
+        Duration duration = const Duration(seconds: 3),
+      }) {
     showSnackBar(
+      duration: duration,
       message: message,
       backgroundColor: Colors.blue[400],
-      icon: Icons.lightbulb_circle,
+      icon: LucideIcons.circleQuestionMark,
     );
   }
 }
@@ -81,6 +93,12 @@ extension ContextX on BuildContext {
   double get mqHeight => MediaQuery.sizeOf(this).height;
 
   bool get isMobile => mqWidth < 600;
+}
+
+extension UnFocus on BuildContext {
+  void unFocus() {
+    FocusScope.of(this).unfocus();
+  }
 }
 
 extension LoadingExtension on BuildContext {

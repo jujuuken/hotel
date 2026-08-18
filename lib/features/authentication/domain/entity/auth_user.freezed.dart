@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_response_model.dart';
+part of 'auth_user.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,60 +13,53 @@ part of 'login_response_model.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$LoginResponseModel {
+mixin _$AuthUser {
   String get accessToken;
   String get refreshToken;
 
-  /// Create a copy of LoginResponseModel
+  /// Create a copy of AuthUser
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $LoginResponseModelCopyWith<LoginResponseModel> get copyWith =>
-      _$LoginResponseModelCopyWithImpl<LoginResponseModel>(
-          this as LoginResponseModel, _$identity);
-
-  /// Serializes this LoginResponseModel to a JSON map.
-  Map<String, dynamic> toJson();
+  $AuthUserCopyWith<AuthUser> get copyWith =>
+      _$AuthUserCopyWithImpl<AuthUser>(this as AuthUser, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoginResponseModel &&
+            other is AuthUser &&
             (identical(other.accessToken, accessToken) ||
                 other.accessToken == accessToken) &&
             (identical(other.refreshToken, refreshToken) ||
                 other.refreshToken == refreshToken));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, accessToken, refreshToken);
 
   @override
   String toString() {
-    return 'LoginResponseModel(accessToken: $accessToken, refreshToken: $refreshToken)';
+    return 'AuthUser(accessToken: $accessToken, refreshToken: $refreshToken)';
   }
 }
 
 /// @nodoc
-abstract mixin class $LoginResponseModelCopyWith<$Res> {
-  factory $LoginResponseModelCopyWith(
-          LoginResponseModel value, $Res Function(LoginResponseModel) _then) =
-      _$LoginResponseModelCopyWithImpl;
+abstract mixin class $AuthUserCopyWith<$Res> {
+  factory $AuthUserCopyWith(AuthUser value, $Res Function(AuthUser) _then) =
+      _$AuthUserCopyWithImpl;
   @useResult
   $Res call({String accessToken, String refreshToken});
 }
 
 /// @nodoc
-class _$LoginResponseModelCopyWithImpl<$Res>
-    implements $LoginResponseModelCopyWith<$Res> {
-  _$LoginResponseModelCopyWithImpl(this._self, this._then);
+class _$AuthUserCopyWithImpl<$Res> implements $AuthUserCopyWith<$Res> {
+  _$AuthUserCopyWithImpl(this._self, this._then);
 
-  final LoginResponseModel _self;
-  final $Res Function(LoginResponseModel) _then;
+  final AuthUser _self;
+  final $Res Function(AuthUser) _then;
 
-  /// Create a copy of LoginResponseModel
+  /// Create a copy of AuthUser
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -87,8 +80,8 @@ class _$LoginResponseModelCopyWithImpl<$Res>
   }
 }
 
-/// Adds pattern-matching-related methods to [LoginResponseModel].
-extension LoginResponseModelPatterns on LoginResponseModel {
+/// Adds pattern-matching-related methods to [AuthUser].
+extension AuthUserPatterns on AuthUser {
   /// A variant of `map` that fallback to returning `orElse`.
   ///
   /// It is equivalent to doing:
@@ -103,12 +96,12 @@ extension LoginResponseModelPatterns on LoginResponseModel {
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_LoginResponseModel value)? $default, {
+    TResult Function(_AuthUser value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _LoginResponseModel() when $default != null:
+      case _AuthUser() when $default != null:
         return $default(_that);
       case _:
         return orElse();
@@ -130,11 +123,11 @@ extension LoginResponseModelPatterns on LoginResponseModel {
 
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_LoginResponseModel value) $default,
+    TResult Function(_AuthUser value) $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _LoginResponseModel():
+      case _AuthUser():
         return $default(_that);
     }
   }
@@ -153,11 +146,11 @@ extension LoginResponseModelPatterns on LoginResponseModel {
 
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_LoginResponseModel value)? $default,
+    TResult? Function(_AuthUser value)? $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _LoginResponseModel() when $default != null:
+      case _AuthUser() when $default != null:
         return $default(_that);
       case _:
         return null;
@@ -183,7 +176,7 @@ extension LoginResponseModelPatterns on LoginResponseModel {
   }) {
     final _that = this;
     switch (_that) {
-      case _LoginResponseModel() when $default != null:
+      case _AuthUser() when $default != null:
         return $default(_that.accessToken, _that.refreshToken);
       case _:
         return orElse();
@@ -209,7 +202,7 @@ extension LoginResponseModelPatterns on LoginResponseModel {
   ) {
     final _that = this;
     switch (_that) {
-      case _LoginResponseModel():
+      case _AuthUser():
         return $default(_that.accessToken, _that.refreshToken);
     }
   }
@@ -232,7 +225,7 @@ extension LoginResponseModelPatterns on LoginResponseModel {
   ) {
     final _that = this;
     switch (_that) {
-      case _LoginResponseModel() when $default != null:
+      case _AuthUser() when $default != null:
         return $default(_that.accessToken, _that.refreshToken);
       case _:
         return null;
@@ -241,75 +234,61 @@ extension LoginResponseModelPatterns on LoginResponseModel {
 }
 
 /// @nodoc
-@JsonSerializable()
-class _LoginResponseModel extends LoginResponseModel {
-  const _LoginResponseModel(
-      {required this.accessToken, required this.refreshToken})
-      : super._();
-  factory _LoginResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$LoginResponseModelFromJson(json);
+
+class _AuthUser implements AuthUser {
+  const _AuthUser({required this.accessToken, required this.refreshToken});
 
   @override
   final String accessToken;
   @override
   final String refreshToken;
 
-  /// Create a copy of LoginResponseModel
+  /// Create a copy of AuthUser
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$LoginResponseModelCopyWith<_LoginResponseModel> get copyWith =>
-      __$LoginResponseModelCopyWithImpl<_LoginResponseModel>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$LoginResponseModelToJson(
-      this,
-    );
-  }
+  _$AuthUserCopyWith<_AuthUser> get copyWith =>
+      __$AuthUserCopyWithImpl<_AuthUser>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoginResponseModel &&
+            other is _AuthUser &&
             (identical(other.accessToken, accessToken) ||
                 other.accessToken == accessToken) &&
             (identical(other.refreshToken, refreshToken) ||
                 other.refreshToken == refreshToken));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, accessToken, refreshToken);
 
   @override
   String toString() {
-    return 'LoginResponseModel(accessToken: $accessToken, refreshToken: $refreshToken)';
+    return 'AuthUser(accessToken: $accessToken, refreshToken: $refreshToken)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$LoginResponseModelCopyWith<$Res>
-    implements $LoginResponseModelCopyWith<$Res> {
-  factory _$LoginResponseModelCopyWith(
-          _LoginResponseModel value, $Res Function(_LoginResponseModel) _then) =
-      __$LoginResponseModelCopyWithImpl;
+abstract mixin class _$AuthUserCopyWith<$Res>
+    implements $AuthUserCopyWith<$Res> {
+  factory _$AuthUserCopyWith(_AuthUser value, $Res Function(_AuthUser) _then) =
+      __$AuthUserCopyWithImpl;
   @override
   @useResult
   $Res call({String accessToken, String refreshToken});
 }
 
 /// @nodoc
-class __$LoginResponseModelCopyWithImpl<$Res>
-    implements _$LoginResponseModelCopyWith<$Res> {
-  __$LoginResponseModelCopyWithImpl(this._self, this._then);
+class __$AuthUserCopyWithImpl<$Res> implements _$AuthUserCopyWith<$Res> {
+  __$AuthUserCopyWithImpl(this._self, this._then);
 
-  final _LoginResponseModel _self;
-  final $Res Function(_LoginResponseModel) _then;
+  final _AuthUser _self;
+  final $Res Function(_AuthUser) _then;
 
-  /// Create a copy of LoginResponseModel
+  /// Create a copy of AuthUser
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -317,7 +296,7 @@ class __$LoginResponseModelCopyWithImpl<$Res>
     Object? accessToken = null,
     Object? refreshToken = null,
   }) {
-    return _then(_LoginResponseModel(
+    return _then(_AuthUser(
       accessToken: null == accessToken
           ? _self.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable

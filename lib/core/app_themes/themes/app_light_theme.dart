@@ -6,35 +6,59 @@ sealed class AppLightThemes {
   static ThemeData call() {
     return ThemeData(
       useMaterial3: true,
-      scaffoldBackgroundColor: AppColors.scaffoldBackground,
+      scaffoldBackgroundColor: AppColors.scaffoldBackgroundLight,
       fontFamily: 'SairaSemiCondensed',
       fontFamilyFallback: ['Cairo'],
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.appbarBackground,
-        actionsIconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: AppColors.appbarBackgroundLight,
+        actionsIconTheme: IconThemeData(color: AppColors.zn900),
+        titleTextStyle: TextStyle(
+          color: AppColors.zn900,
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+        iconTheme: IconThemeData(color: AppColors.zn900),
       ),
-      colorScheme: const ColorScheme.light(brightness: Brightness.light, primary: AppColors.blue),
+      colorScheme: const ColorScheme.light(
+        brightness: Brightness.light,
+        primary: AppColors.primary,
+        onPrimary: AppColors.white,
+        onSurface: AppColors.zn900,
+      ),
       switchTheme: SwitchThemeData(
         thumbIcon: WidgetStateProperty.resolveWith(
-          (states) => states.contains(WidgetState.selected)
-              ? const Icon(Icons.check, color: AppColors.mainColor, size: 20)
+              (states) => states.contains(WidgetState.selected)
+              ? const Icon(Icons.check, color: AppColors.white, size: 20)
               : const Icon(Icons.close, size: 20),
         ),
-        trackColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? AppColors.mainColor : AppColors.white),
-        thumbColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? AppColors.white : AppColors.mainColor),
-        trackOutlineColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? null : AppColors.mainColor),
+        trackColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected)
+              ? AppColors.primary
+              : AppColors.zn200,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected)
+              ? AppColors.white
+              : AppColors.zn400,
+        ),
+        trackOutlineColor: WidgetStateProperty.resolveWith(
+              (states) =>
+          states.contains(WidgetState.selected) ? null : AppColors.zn300,
+        ),
       ),
-      badgeTheme: const BadgeThemeData(backgroundColor: AppColors.red),
+      badgeTheme: const BadgeThemeData(backgroundColor: AppColors.primary),
       sliderTheme: SliderThemeData(
         trackHeight: 7,
-        activeTrackColor: AppColors.mainColor,
-        inactiveTrackColor: AppColors.secondary,
-        thumbColor: AppColors.mainColor,
-        overlayColor: AppColors.mainColor.withValues(alpha: 0.3),
-        valueIndicatorColor: AppColors.mainColor,
+        activeTrackColor: AppColors.primary,
+        inactiveTrackColor: AppColors.zn200,
+        thumbColor: AppColors.primary,
+        overlayColor: AppColors.primary.withValues(alpha: 0.2),
+        valueIndicatorColor: AppColors.primary,
         showValueIndicator: ShowValueIndicator.onlyForContinuous,
-        valueIndicatorStrokeColor: AppColors.mainColor,
-        valueIndicatorTextStyle: AppTextStyle.style14Medium.copyWith(color: AppColors.white),
+        valueIndicatorStrokeColor: AppColors.primary,
+        valueIndicatorTextStyle: AppTextStyle.style14Medium.copyWith(
+          color: AppColors.white,
+        ),
       ),
     );
   }

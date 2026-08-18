@@ -9,6 +9,8 @@ class AppScaffold extends StatelessWidget {
   final Widget? bottomNavigationBar;
   final bool? resizeToAvoidBottomInset;
   final Color? backgroundColor;
+  final SystemUiOverlayStyle? systemUiOverlayStyle;
+  final bool useSafeArea;
 
   const AppScaffold({
     super.key,
@@ -19,24 +21,27 @@ class AppScaffold extends StatelessWidget {
     this.bottomNavigationBar,
     this.resizeToAvoidBottomInset,
     this.backgroundColor,
+    this.systemUiOverlayStyle,
+    this.useSafeArea = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
+      value: systemUiOverlayStyle ?? const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+      ),
       child: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: SafeArea(
-          child: Scaffold(
-            body: body,
-            backgroundColor: backgroundColor,
-            appBar: appBar,
-            floatingActionButton: floatingActionButton,
-            floatingActionButtonLocation: floatingActionButtonLocation,
-            bottomNavigationBar: bottomNavigationBar,
-            resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-          ),
+        child: Scaffold(
+          body: useSafeArea ? SafeArea(child: body) : body,
+          backgroundColor: backgroundColor,
+          appBar: appBar,
+          floatingActionButton: floatingActionButton,
+          floatingActionButtonLocation: floatingActionButtonLocation,
+          bottomNavigationBar: bottomNavigationBar,
+          resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         ),
       ),
     );
