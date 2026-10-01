@@ -1,9 +1,8 @@
 import 'package:fpdart/fpdart.dart';
 
-import '../../../../../core/api/api_request_helpers/api_consumer.dart';
-import '../../../../../core/api/api_request_helpers/api_handler.dart';
-import '../../../../../core/api/api_request_helpers/end_points.dart';
-import '../../../../../core/error_handling/failures/failure.dart';
+import '../../../../../core/models/failure/failure.dart';
+import '../../../../../core/network/api_consumer.dart';
+import '../../../../../core/network/api_handler.dart';
 import '../../../domain/use_case/auth_param.dart';
 import '../../model/login_response_model.dart';
 import '../../model/register_response_model.dart';
@@ -25,7 +24,7 @@ class AuthRemoteDataSourceImpl with ApiHandler implements AuthRemoteDataSource {
   TaskEither<Failure, LoginResponseModel> login(AuthParam param) {
     return result<LoginResponseModel>(
       call: () => api.post(
-        EndPoints.login,
+        '',
         body: {
           'userName': param.login?.email,
           'userPassword': param.login?.password,
@@ -40,7 +39,7 @@ class AuthRemoteDataSourceImpl with ApiHandler implements AuthRemoteDataSource {
   @override
   TaskEither<Failure, RegisterResponseModel> register(AuthParam param) {
     return result<RegisterResponseModel>(
-      call: () => api.get(EndPoints.register, cancelToken: param.cancelToken),
+      call: () => api.get('', cancelToken: param.cancelToken),
       fromJsonT: (json) => RegisterResponseModel.fromJson(json),
       defaultValue: RegisterResponseModel.empty,
     );
