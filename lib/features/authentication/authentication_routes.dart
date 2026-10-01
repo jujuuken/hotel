@@ -1,8 +1,6 @@
-import '../../core/extension/extensions.dart';
 import 'presentation/authentication_screen/ui/login_screen.dart';
 import 'presentation/authentication_screen/ui/register_screen.dart';
 import '../splash/presentation/pages/splash_screen.dart';
-import '../../core/app_routes/app_routes.dart';
 
 class AuthenticationRoutes {
   static const String splash = 'splash';

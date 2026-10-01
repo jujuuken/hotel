@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/extension/extensions.dart';
-import '../../../../../core/widgets/app_scaffold.dart';
+import '../../../../../shared_ui/widgets/app_scaffold.dart';
+import '../../../../../shared_utils/extensions/extensions.dart';
 import '../logic/authentication_bloc.dart';
 import 'login/login_action.dart';
 import 'login/login_controller.dart';

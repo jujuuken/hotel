@@ -1,7 +1,7 @@
 import 'package:fpdart/fpdart.dart';
 
-import '../../../../core/error_handling/failures/failure.dart';
-import '../../../../core/helpers/architecture_helper/use_case.dart';
+import '../../../../core/helpers/architecture/use_case.dart';
+import '../../../../core/models/failure/failure.dart';
 import '../repository/auth_repository.dart';
 import 'auth_param.dart';
 

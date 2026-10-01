@@ -1,32 +1,37 @@
 import 'package:dio/dio.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'auth_param.freezed.dart';
-@freezed
-sealed class AuthParam with _$AuthParam {
-  const factory AuthParam ({
-    LoginParam? login,
-    RegisterParam? register,
-    CancelToken? cancelToken,
-}) = _AuthParam;
+class AuthParam {
+  final LoginParam? login;
+  final RegisterParam? register;
+  final CancelToken? cancelToken;
+
+  const AuthParam({
+    this.login,
+    this.register,
+    this.cancelToken,
+  });
 }
 
-@freezed
-sealed class LoginParam with _$LoginParam {
-  const factory LoginParam({
-    required String email,
-    required String password,
-  }) = _LoginParam;
+class LoginParam {
+  final String email;
+  final String password;
 
+  const LoginParam({
+    required this.email,
+    required this.password,
+  });
 }
 
-@freezed
-sealed class RegisterParam with _$RegisterParam {
-  const factory RegisterParam({
-    required String fullName,
-    required String email,
-    required String password,
-    @Default(false) bool acceptTerms,
-  }) = _RegisterParam;
+class RegisterParam {
+  final String fullName;
+  final String email;
+  final String password;
+  final bool acceptTerms;
 
+  const RegisterParam({
+    required this.fullName,
+    required this.email,
+    required this.password,
+    this.acceptTerms = false, // Pengganti @Default(false)
+  });
 }
