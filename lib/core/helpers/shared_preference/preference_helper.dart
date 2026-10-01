@@ -3,8 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 sealed class SharedPrefsHelper {
   static late final SharedPreferences _pref;
 
-  static Future<void> init() async {
-    _pref = await SharedPreferences.getInstance();
+  static Future<void> init([SharedPreferences? pref]) async {
+    _pref = pref ?? await SharedPreferences.getInstance();
   }
 
   // OLD save without encryption

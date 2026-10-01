@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 
+import '../../features/authentication/authentication_module.dart';
 import 'core_module.dart';
 
 // Global Service Locator instance
@@ -10,5 +11,5 @@ Future<void> initServiceLocator() async {
   await CoreModule.init();
 
   // 2. Feature Modules
-  // ProductModule.init();
+  AuthModule.init();
 }
