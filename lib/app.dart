@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'core/routes/main_routes.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -9,8 +11,8 @@ class App extends StatelessWidget {
       // theme: AppThemes.light(),
       // darkTheme: AppThemes.dark(),
       // themeMode: ThemeMode.light,
-      // routerConfig: AppRouter.router,
-      // debugShowCheckedModeBanner: false,
+      routerConfig: MainRoutes.router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
