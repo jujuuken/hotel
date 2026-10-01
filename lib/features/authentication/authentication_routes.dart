@@ -1,6 +1,9 @@
+import 'package:go_router/go_router.dart';
+
+import '../../shared_utils/extensions/extensions.dart';
+import '../splash/presentation/pages/splash_screen.dart';
 import 'presentation/authentication_screen/ui/login_screen.dart';
 import 'presentation/authentication_screen/ui/register_screen.dart';
-import '../splash/presentation/pages/splash_screen.dart';
 
 class AuthenticationRoutes {
   static const String splash = 'splash';

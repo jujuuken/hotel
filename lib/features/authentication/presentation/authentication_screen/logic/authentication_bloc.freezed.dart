@@ -232,7 +232,7 @@ $Res call({
 });
 
 
-$LoginParamCopyWith<$Res> get param;
+
 
 }
 /// @nodoc
@@ -252,16 +252,7 @@ as LoginParam,
   ));
 }
 
-/// Create a copy of AuthenticationEvent
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$LoginParamCopyWith<$Res> get param {
-  
-  return $LoginParamCopyWith<$Res>(_self.param, (value) {
-    return _then(_self.copyWith(param: value));
-  });
-}
+
 }
 
 /// @nodoc
@@ -307,7 +298,7 @@ $Res call({
 });
 
 
-$RegisterParamCopyWith<$Res> get param;
+
 
 }
 /// @nodoc
@@ -327,16 +318,7 @@ as RegisterParam,
   ));
 }
 
-/// Create a copy of AuthenticationEvent
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$RegisterParamCopyWith<$Res> get param {
-  
-  return $RegisterParamCopyWith<$Res>(_self.param, (value) {
-    return _then(_self.copyWith(param: value));
-  });
-}
+
 }
 
 /// @nodoc

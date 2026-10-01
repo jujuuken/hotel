@@ -1,18 +1,16 @@
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:bloc_concurrency/bloc_concurrency.dart';
 
 import '../../../domain/use_case/auth_param.dart';
 import '../../../domain/use_case/login_use_case.dart';
 import '../../../domain/use_case/logout_use_case.dart';
 import '../../../domain/use_case/register_use_case.dart';
 
-part 'authentication_event.dart';
-
-part 'authentication_state.dart';
-
 part 'authentication_bloc.freezed.dart';
+part 'authentication_event.dart';
+part 'authentication_state.dart';
 
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
   final LoginUseCase login;
