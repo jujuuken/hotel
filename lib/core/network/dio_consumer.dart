@@ -37,8 +37,8 @@ class DioConsumer implements ApiConsumer {
       InterceptorsWrapper(
         onRequest: (options, handler) async {
           final publicEndpoints = [
-            // EndPoints.login,
-            // EndPoints.register,
+            Endpoints.login,
+            Endpoints.register,
           ];
           bool isPublic = publicEndpoints.contains(options.path);
           if (!isPublic) {
@@ -64,7 +64,7 @@ class DioConsumer implements ApiConsumer {
           ),
         ),
       );
-      AppLogger.info('Bearer ${SecureStorageHelper.get(StorageKeys.accessToken)}');
+      AppLogger.info('DebugMode: Bearer ${SecureStorageHelper.get(StorageKeys.accessToken)}');
     }
   }
 

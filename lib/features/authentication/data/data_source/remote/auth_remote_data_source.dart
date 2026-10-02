@@ -3,6 +3,7 @@ import 'package:fpdart/fpdart.dart';
 import '../../../../../core/models/failure/failure.dart';
 import '../../../../../core/network/api_consumer.dart';
 import '../../../../../core/network/api_handler.dart';
+import '../../../../../core/network/endpoints.dart';
 import '../../../domain/use_case/auth_param.dart';
 import '../../model/login_response_model.dart';
 import '../../model/register_response_model.dart';
@@ -24,7 +25,7 @@ class AuthRemoteDataSourceImpl with ApiHandler implements AuthRemoteDataSource {
   TaskEither<Failure, LoginResponseModel> login(AuthParam param) {
     return result<LoginResponseModel>(
       call: () => api.post(
-        '',
+        Endpoints.login,
         body: {
           'userName': param.login?.email,
           'userPassword': param.login?.password,

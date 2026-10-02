@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import '../helpers/secure_storage/secure_storage_helper.dart';
 import '../helpers/secure_storage/secure_storage_keys.dart';
 import '../network/api_consumer.dart';
+import '../network/endpoints.dart';
 
 class RefreshTokenInterceptor extends Interceptor {
   final ApiConsumer apiConsumer;
@@ -18,10 +19,10 @@ class RefreshTokenInterceptor extends Interceptor {
 
     // Pastikan bukan error dari endpoint auth itu sendiri untuk menghindari infinite loop
     final authEndpoints = [
-      // EndPoints.login,
-      // EndPoints.refreshToken,
-      // EndPoints.register,
-      // EndPoints.forgotPassword
+      Endpoints.login,
+      Endpoints.register,
+      Endpoints.forgotPassword,
+      Endpoints.refreshToken,
     ];
 
     bool isAuthPath = authEndpoints.any(
