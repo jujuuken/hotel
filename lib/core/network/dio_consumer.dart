@@ -12,6 +12,7 @@ import '../helpers/secure_storage/secure_storage_keys.dart';
 import '../interceptors/app_logger_interceptor.dart';
 import '../interceptors/refresh_token_interceptor.dart';
 import 'api_consumer.dart';
+import 'endpoints.dart';
 
 class DioConsumer implements ApiConsumer {
   static DioConsumer? _instance;
@@ -70,7 +71,7 @@ class DioConsumer implements ApiConsumer {
   @override
   void setDioOptions() {
     client.options
-      ..baseUrl = baseUrl ?? "EndPoints.baseUrl"
+      ..baseUrl = baseUrl ?? Endpoints.baseUrl
       ..headers = {
         'accept': 'application/json',
         'Content-Type': 'application/json',

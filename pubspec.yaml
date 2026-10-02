@@ -34,6 +34,7 @@ dependencies:
   talker_flutter: ^5.1.11
   talker_bloc_logger: ^5.1.11
   talker_dio_logger: ^5.1.11
+  flutter_dotenv: ^6.0.1
 
 dev_dependencies:
   flutter_test:
@@ -51,3 +52,4 @@ flutter:
     - assets/fonts/
     - assets/icons/
     - assets/images/
+    - .env

@@ -21,6 +21,6 @@ class CoreModule {
     await SecureStorageHelper.init(secureStorage);
 
     // ApiConsumer (Dio)
-    sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(baseUrl: ''));
+    sl.registerLazySingleton<ApiConsumer>(() => DioConsumer());
   }
 }
